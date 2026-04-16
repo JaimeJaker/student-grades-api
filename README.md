@@ -7,7 +7,7 @@ Esta es la implementación del **Backend**. Se trata de una **API RESTFull** con
 ## 🛠️ Tecnologías y Herramientas Evaluadas
 
 - **Lenguaje:** Java 17
-- **Framework:** Spring Boot 3.3.4 (Spring Web, Spring Validation)
+- **Framework:** Spring Boot 3.5.4 (Spring Web, Spring Validation)
 - **Persistencia:** Spring Data JPA + Hibernate
 - **Base de Datos:** MySQL 8.0
 - **Gestor de Dependencias:** Maven
