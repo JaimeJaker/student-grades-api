@@ -1,0 +1,95 @@
+# Backend - Gestión de Alumnos y Notas
+
+## 🚀 Tecnologías
+
+* Java 17
+* Spring Boot
+* Spring Data JPA
+* H2 Database
+* Docker
+
+---
+
+## 📌 Descripción
+
+API REST para gestionar alumnos, materias y notas.
+Permite registrar notas asociando alumnos con materias.
+
+## ▶️ Cómo ejecutar
+
+Solo necesitas 2 comandos principales para desplegar la estructura con Docker.
+
+### 🔹 Despliegue con Docker (Recomendado)
+
+```bash
+# 1. Crear configuración de entorno
+cp .env.example .env
+
+# 2. Levantar la base de datos y la API en background
+docker compose up -d --build
+```
+
+### 🔹 Despliegue Local (Sin Docker para BD remota)
+
+Si prefieres ejecutar el binario local, asegúrate de tener variables de entorno en tu sistema local.
+
+```bash
+./mvnw spring-boot:run
+```
+
+## 📡 Endpoints principales
+
+### 👨‍🎓 Alumnos
+
+* `GET /alumnos`
+* `POST /alumnos`
+
+### 📚 Materias
+
+* `GET /materias`
+* `POST /materias`
+
+### 📝 Notas
+
+* `POST /notas`
+* `GET /notas/alumno/{id}`
+
+---
+
+## 🧪 Ejemplo: crear nota
+
+```json
+{
+  "valor": 4.5,
+  "alumnoId": 1,
+  "materiaId": 1
+}
+```
+
+---
+
+## 🗄️ Base de datos
+
+Por defecto, se usa H2 en memoria con consola disponible en:
+
+```
+http://localhost:8080/h2-console
+```
+
+Al utilizar Docker, se levantará una base de datos PostgreSQL utilizando variables de entorno para su conexión.
+
+---
+
+## 🐳 Docker
+
+La aplicación corre en un contenedor con Java 17 y un contenedor dedicado con PostgreSQL 15.
+
+Para conectarse a la base de datos se usan las siguientes variables de entorno (ya configuradas en `docker-compose.yml`):
+- `DB_URI`
+- `DB_USER`
+- `DB_PASSWORD`
+- `DB_DRIVER`
+
+## 👨‍💻 Autor
+
+Jaime Darley Angulo Tenorio
